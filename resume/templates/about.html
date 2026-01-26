@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content1 %}
+<div class="row my-5">
+ <div class="col-4 d-flex justify-content-center align-items-center">
+    <img src="{% static 'images/img1.jpg' %}" alt="image" class="about_image">
+ </div>
+
+ <div class="col-7 text-left text-light">
+     <h2> Hello !</h2>
+     <p class="fs-5">
+         
+     I am a motivated Python Full Stack fresher with a strong foundation in Python programming and web development. I have hands-on experience working with Django and Django REST Framework (DRF) through academic projects and self-learning. I am passionate about building web applications, learning new technologies, and continuously improving my problem-solving and coding skills.
+      </p>
+      <p class="fs-5">
+      I have a good understanding of Python concepts, syntax, and best practices, along with basic knowledge of frontend technologies and database integration. I am eager to apply my skills in a professional environment and grow as a developer while contributing effectively to a team.
+      </p>
+
+ </div>
+</div>
+
+
+<div class="row my-2">
+    <h2 class="text-center" style="color:#4fffb0"> My Tech Stack</h2>
+
+    <div class="d-flex justify-content-around align-items-center">
+      <img
+          src="{% static 'images/html.png' %}"
+          width="70"
+          height="70"
+          alt="HTML Logo"
+          class="img-fluid"
+      />
+
+      <img
+          src="{% static 'images/css.png' %}"
+          width="70"
+          height="70"
+          alt="CSS Logo"
+          class="img-fluid"
+      />
+
+      <img
+          src="{% static 'images/js.png' %}"
+          width="70"
+          height="70"
+          alt="JavaScript Logo"
+          class="img-fluid"
+      />
+
+      <img
+          src="{% static 'images/python.jpg' %}"
+          width="60"
+          height="60"
+          alt="Python Logo"
+          class="img-fluid"
+      />
+
+      <img
+          src="{% static 'images/react.png' %}"
+          width="60"
+          height="60"
+          alt="React Logo"
+          class="img-fluid"
+      />
+
+      <img
+          src="{% static 'images/download.png' %}"
+          width="70"
+          height="70"
+          alt="Django Logo"
+          class="img-fluid"
+      />
+  </div>
+
+</div>
+
+{% endblock content1 %}

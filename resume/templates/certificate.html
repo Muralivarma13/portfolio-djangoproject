@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content1 %}
+
+<div class="row">
+
+    <div class="jumbtron jumbtron-fluid mt-2 text-center">
+        <h1 class="display4">Artificial Intelligence Fundamentals</h1>
+        <img 
+            src="{% static 'images/ibm.png' %}" 
+            alt="AI Certificate"
+            class="img-fluid mt-3"
+            style="max-width: 400px;"
+        >
+    </div>
+
+    <div class="jumbtron jumbtron-fluid mt-2 text-center">
+        <h1 class="display4">AWS Cloud Practitioner Essentials</h1>
+        <img 
+            src="{% static 'images/aws.png' %}" 
+            alt="AWS Certificate"
+            class="img-fluid mt-3"
+            style="max-width: 400px;"
+        >
+    </div>
+
+</div>
+
+{% endblock content1 %}
