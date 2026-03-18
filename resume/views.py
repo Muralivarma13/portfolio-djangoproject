@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.staticfiles.storage import staticfiles_storage
+from .models import Contact   # 👈 ADD THIS
 
 # Create your views here.
 def home(request):
@@ -15,7 +16,6 @@ def projects (request):
         'title': 'Watch Store',
         'path': 'images/watch.png',
         'description': 'An e-commerce web application for watches with product listing, cart functionality, and user-friendly UI built using Django.',
-          
         'github_link': 'https://muralivarma13.github.io/css-project1/'
     },
     {
@@ -36,11 +36,7 @@ def projects (request):
         'description': 'A full-featured e-commerce application with CRUD operations, product management, and database integration using Django.',
         'github_link': 'https://simple-mart-react-project.vercel.app/'
     },
-   
 ]
-  
-
-   
      return render (request,"projects.html",{"projects_show": projects_show})
 
 
@@ -59,7 +55,6 @@ def experience(request):
         "position": "Django & REST Framework Learner"
     }
 ]
-
     return render (request,"experience.html",{"experience":experience})
 
 
@@ -67,8 +62,25 @@ def certificate(request):
     return render (request, "certificate.html")
 
 
+# ✅ UPDATED CONTACT FUNCTION
 def contact(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+
+        Contact.objects.create(
+            name=name,
+            email=email,
+            phone=phone,
+            message=message
+        )
+
+        return render(request, "contact.html", {"success": True})
+
     return render (request,"contact.html")
+
 
 def resume(request):
     resume_path="myapp/resume.pdf"
@@ -76,7 +88,7 @@ def resume(request):
     if staticfiles_storage.exists(resume_path):
         with open(resume_path,"rb") as resume_file:
             response=HttpResponse(resume_file.read(),content_type="application/pdf")
-            response['Content-Disposition']='attachment';filename="resume.pdf"
+            response['Content-Disposition']='attachment; filename="resume.pdf"'
             return response
     else:
         return HttpResponse("resume not found", status=404)
