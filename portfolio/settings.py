@@ -28,6 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "portfolio-djangoproject.onrender.com",
+    "127.0.0.1",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
