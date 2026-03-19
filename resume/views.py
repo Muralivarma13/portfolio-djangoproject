@@ -62,24 +62,32 @@ def certificate(request):
     return render (request, "certificate.html")
 
 
-# ✅ UPDATED CONTACT FUNCTION
+
 def contact(request):
+    success = False
+    error = False
+
     if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        message = request.POST.get('message')
+        try:
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            phone = request.POST.get('phone')
+            message = request.POST.get('message')
 
-        Contact.objects.create(
-            name=name,
-            email=email,
-            phone=phone,
-            message=message
-        )
+            Contact.objects.create(
+                name=name,
+                email=email,
+                phone=phone,
+                message=message
+            )
 
-        return render(request, "contact.html", {"success": True})
+            success = True
 
-    return render (request,"contact.html")
+        except Exception as e:
+            print("ERROR:", e)
+            error = True
+
+    return render(request, "contact.html", {"success": success, "error": error})
 
 
 def resume(request):
