@@ -29,16 +29,18 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '*',
     'https://portfolio-djangoproject-1.onrender.com/',
-    '127.0.0.1'
+    ".onrender.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://portfolio-djangoproject-1.onrender.com/",
+     "https://*.onrender.com",
 ]
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
+CSRF_COOKIE_SAMESITE = 'Lax'
 
 # Application definition
 

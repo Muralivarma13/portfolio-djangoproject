@@ -50,10 +50,10 @@ def experience(request):
         "company": "Self Learning",
         "position": "Python Full Stack Learner"
     },
-    {
-        "company": "Online Training",
-        "position": "Django & REST Framework Learner"
-    }
+    # {
+    #     # "company": "Online Training",
+    #     # "position": "Django & REST Framework Learner"
+    # }
 ]
     return render (request,"experience.html",{"experience":experience})
 
