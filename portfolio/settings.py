@@ -27,8 +27,7 @@ SECRET_KEY = 'django-insecure-m4+a=rxip=n)r^pz7*y+51&t#!sserf5soqxtbcsyg7%cmm94v
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "portfolio-djangoproject-1.onrender.com",
-    ".onrender.com",
+   "*"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
