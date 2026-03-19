@@ -23,9 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m4+a=rxip=n)r^pz7*y+51&t#!sserf5soqxtbcsyg7%cmm94v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+DEBUG = False
+
+ALLOWED_HOSTS = [
+    "portfolio-djangoproject.onrender.com",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://portfolio-djangoproject.onrender.com",
+]
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 
 # Application definition
